@@ -1,13 +1,16 @@
 import { Hono } from "@hono/hono";
 import { cors } from "@hono/hono/cors";
+import { serveStatic } from "@hono/hono/deno";
 import data from "./data.json" with { type: "json" };
 
 const app = new Hono();
 
+app.use("/", serveStatic({ root: "./dist" }));
+
 app.use(
   "/api/*",
   cors({
-    origin: "http://localhost:5173",
+    origin: "http://localhost:8000",
     allowMethods: ["GET", "POST", "PUT", "DELETE"],
     allowHeaders: ["Content-Type", "Authorization"],
     exposeHeaders: ["Content-Type", "Authorization"],
@@ -40,5 +43,7 @@ app.get("/api/dinosaurs/:dinosaur", (c) => {
   }
 });
 
-Deno.serve(app.fetch);
+app.get('*', serveStatic({ root: './dist' }))
 
+
+Deno.serve(app.fetch);

@@ -1,12 +1,20 @@
 {
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "types": ["@hono/hono/types"]
+  },
   "tasks": {
     "dev": "deno task dev:api & deno task dev:vite",
     "dev:api": "deno --allow-env --allow-net api/main.ts",
     "dev:vite": "deno -A npm:vite",
+    "build:host": "deno --allow-env --allow-net --allow-read=dist api/main.ts",
     "build:vite": "deno run -A --node-modules-dir npm:vite build" 
   },
   "imports": {
     "@hono/hono": "jsr:@hono/hono@^4.7.5",
+    "@hono/hono/cors": "jsr:@hono/hono@^4.7.5/cors",
+    "@hono/hono/helper": "jsr:@hono/hono@^4.7.5/helper",
     "@std/assert": "jsr:@std/assert@1"
   }
 }
