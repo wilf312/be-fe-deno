@@ -19,10 +19,6 @@ app.use(
   }),
 );
 
-app.get("/", (c) => {
-  return c.text("Welcome to the dinosaur API!");
-});
-
 app.get("/api/dinosaurs", (c) => {
   return c.json(data);
 });
