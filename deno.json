@@ -2,7 +2,8 @@
   "tasks": {
     "dev": "deno task dev:api & deno task dev:vite",
     "dev:api": "deno --allow-env --allow-net api/main.ts",
-    "dev:vite": "deno -A npm:vite"
+    "dev:vite": "deno -A npm:vite",
+    "build:vite": "deno run -A --node-modules-dir npm:vite build" 
   },
   "imports": {
     "@hono/hono": "jsr:@hono/hono@^4.7.5",

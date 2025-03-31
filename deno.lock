@@ -19,6 +19,7 @@
     "npm:react@19": "19.1.0",
     "npm:typescript-eslint@^8.24.1": "8.28.0_eslint@9.23.0_typescript@5.7.3_@typescript-eslint+parser@8.28.0__eslint@9.23.0__typescript@5.7.3",
     "npm:typescript@~5.7.2": "5.7.3",
+    "npm:vite@*": "6.2.4",
     "npm:vite@^6.2.0": "6.2.4"
   },
   "jsr": {
