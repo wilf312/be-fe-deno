@@ -1,6 +1,5 @@
 import { RootRoute, Route } from "@tanstack/react-router";
 import { Canvas } from "./component/Canvas";
-import { DinosaurList } from "./component/DinosaurList";
 import { DinosaurDetail } from "./component/DinosaurDetail";
 import { Layout } from "./component/Layout";
 
